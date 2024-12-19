@@ -1,0 +1,177 @@
+/* ??ºæ?¬æ¨£å¼?è¨­ç½® */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ??´é??ä½?å±? */
+body, html {
+    width: 100%;
+    height: 100vh;
+    overflow: y-hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* ?????¨æ??é¡? */
+header {
+    background-color: #4caf50;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+}
+
+/* ä¸»å?????å¸?å±? */
+.container {
+    display: flex;
+    height: 100vh;
+    overflow: y-hidden;
+    height: calc(100% - 60px); /* ?????? header ???é«?åº? */
+}
+
+/* å·¦å?´è??è¨?æ¬? */
+.sidebar {
+    width: 300px;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    overflow: auto;
+    margin: 0; /* ç§»é?¤ä»»ä½?å¤????è·? */
+    display: flex;
+    flex-direction: column;
+}
+
+/* è³?è¨?æ¬???§é?¨æ??é¡??????¸é?? */
+.sidebar h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-top: 20px; /* ??¨æ??é¡?ä¸???¹å????? 20px ???ç©ºé?? */
+}
+
+/* è¦?è§???§å?¶æ?????æ¨?å¼? */
+.sidebar .control-buttons, .sidebar .route-buttons {
+    display: flex;
+    gap: 10px;
+}
+.sidebar select {
+    width: 100%; /* ??¸å?®å¯¬åº¦è¨­å®???ºå·¦??´æ?????å¯¬åº¦ */
+    padding: 12px; /* å¢??????§é?¨é??è·?ï¼?è®???¸å?®å?§å®¹??´æ????? */
+    font-size: 18px; /* å¢?å¤§å??é«?å¤§å?? */
+    border-radius: 5px; /* ???è§????æ¡?ï¼?ä½¿é?¸å?®æ?´å?·è??è¦ºæ????? */
+}
+
+.control-buttons button, .route-buttons button {
+    padding: 15px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+
+.flood-report-button {
+    padding: 10px 20px;  /* è®??????????èµ·ä????´å¯¬ */
+    font-size: 16px;
+    background-color: #0b740f;
+    color: white;
+    border: none;
+    border-radius: 3px;  /* è¼?å°???????è§? */
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: auto; /* è®????????????? */
+}
+
+.flood-report-button:hover {
+    background-color: #045a08;
+}
+
+.route-plan-button {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.route-plan-button:hover {
+    background-color: #45a049;
+}
+
+.range-plan-button {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    background-color: #96d45c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px 0px 0px 0px;
+}
+
+
+
+.range-plan-button:hover {
+    background-color: #6aca57;
+}
+
+.start-cursor {
+    cursor: url("{% static 'images/start_cursor.png' %}"), auto;
+}
+
+.end-cursor {
+    cursor: url("{% static 'images/end_cursor.png' %}"), auto;
+}
+/* ??³å?´å?°å?? */
+#map {
+    flex-grow: 1;
+}
+header button {
+    float: right;
+    margin-right: 20px;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#restrictedAreaOptions {
+    display: flex;                /* ä½¿ç?? Flexbox å¸?å±? */
+    flex-direction: column;       /* ?????´æ?????å­????ç´? */
+    align-items: center;          /* å­????ç´?æ°´å¹³å±?ä¸? */
+    justify-content: center;      /* å­????ç´??????´å??é½? */
+    gap: 2px;                     /* å­????ç´?ä¹??????????è·? */
+    padding: 0;                   /* ??»é?¤å?§é??è·? */
+}
+
+
+
+#restrictedAreaOptions.expanded {
+    max-height: 500px; /* å±????å¾???????å¤§é??åº¦ï????¹æ????§å®¹èª¿æ?´ï?? */
+}
+
+/* ç§»é?¤æ?????ä¹???????ç©ºé?? */
+#restrictedAreaOptions button {
+    margin: 0; /* ??????ä¹??????¡é??è·? */
+    border-bottom: 1px solid #333; /* æ·»å????????ç·? */
+}
+
+#restrictedAreaOptions button:last-child {
+    border-bottom: none; /* ???å¾?ä¸??????????ä¸????è¦???????ç·? */
+}
+
+.layui-layer-content .layui-form-label {
+    padding: 3px 5px !important; /* ä¿®æ?? padding */
+    width: auto; /* ??????èª¿æ?´å¯¬åº? */
+}
