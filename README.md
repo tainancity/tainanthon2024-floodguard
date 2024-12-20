@@ -62,7 +62,7 @@ pip install -r requirements.txt
 python manage.py runserver
 ```
 
-伺服器啟動後，打開瀏覽器並訪問：`http://127.0.0.1:8000`
+伺服器啟動後，打開瀏覽器並訪問：`http://127.0.0.1:8000/map`
 
 ---
 
