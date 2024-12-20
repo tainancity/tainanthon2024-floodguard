@@ -70,34 +70,49 @@ python manage.py runserver
 
 ```
 <專案名稱>/
-├── data/
-│   ├── flood_reports.json    # 淹水回報數據
-│   ├── processed_data.csv    # 處理後的避難所數據
-│   └── 臺南市內各區災害避難收容場所.csv
+├── .env                      # API 金鑰配置
+├── db.sqlite3                # SQLite 資料庫
+├── manage.py                 # Django 管理命令入口
+├── requirements.txt          # 依賴列表
 ├── shelter_project/          # Django 項目目錄
+│   ├── asgi.py               # ASGI 配置文件
 │   ├── settings.py           # 配置文件
 │   ├── urls.py               # 路由設置
-│   └── views.py              # 視圖文件
+│   ├── wsgi.py               # WSGI 配置文件
+│   └── __init__.py           # Python 包初始化文件
 ├── shelters/                 # 應用目錄
+│   ├── admin.py              # Django 管理界面配置
+│   ├── apps.py               # 應用配置
 │   ├── models.py             # 數據庫模型
+│   ├── tests.py              # 測試文件
 │   ├── views.py              # 應用視圖
+│   ├── __init__.py           # Python 包初始化文件
 │   └── migrations/           # 數據庫遷移文件
+│       ├── 0001_initial.py   # 初始遷移文件
+│       ├── 0002_xxx.py       # 更新遷移文件
+│       └── __init__.py       # Python 包初始化文件
 ├── static/                   # 靜態資源
 │   ├── css/
 │   │   └── style.css         # 樣式文件
+│   ├── data/                 # 靜態數據文件
+│   │   ├── flood_reports.json # 淹水回報數據
+│   │   ├── shelterdata.json  # 避難所數據
+│   │   └── area/             # 地理數據文件
+│   │       ├── 6h150.shp     # 示例地理數據文件
+│   │       └── ...           # 其他地理數據
 │   ├── images/
 │   │   ├── drop.png          # 測站圖標
 │   │   ├── red_pin.png       # 目前位置圖標
-│   │   └── yellow_pin.png    # 避難所圖標
+│   │   ├── yellow_pin.png    # 避難所圖標
+│   │   └── ...               # 其他圖標
 │   └── js/
 │       ├── script.js         # 主腳本
 │       └── weather.js        # 天氣功能腳本
-├── templates/
+├── templates/                # HTML 模板
 │   ├── base.html             # 基本模板
 │   ├── map.html              # 地圖頁面模板
-├── .env                      # API 金鑰配置
-├── requirements.txt          # 依賴列表
-└── manage.py                 # Django 管理命令入口
+└── README.md                 # 專案說明文件
+
 ```
 
 ---
