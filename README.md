@@ -39,11 +39,11 @@ cd <your_repo_name>
 
 1. 前往 [交通部中央氣象署](https://opendata.cwb.gov.tw/) 申請 CWB API 金鑰。
 2. 前往 [OpenRouteService](https://openrouteservice.org/sign-up/) 申請 ORS API 金鑰。
-3. 
-運行以下指令來生成一個隨機的 SECRET_KEY：
+3. 運行以下指令來生成一個隨機的 SECRET_KEY：
 
 ```bash
 python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+```
 
 4. 將金鑰填入 `.env` 文件中，格式如下：
 
