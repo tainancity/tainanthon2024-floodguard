@@ -17,6 +17,7 @@ load_dotenv()
 
 CWB_API_KEY = os.getenv('CWB_API_KEY')
 ORS_API_KEY = os.getenv('ORS_API_KEY')
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,9 +25,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-i8a)r(d!j%(v1!kgca)d&wi2=$vfb-kcaf#2*rt8!!rg-5l&!@"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -55,6 +53,13 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_HTTPONLY = True
+SESSION_COOKIE_SECURE = True
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_SSL_REDIRECT = True
+SECURE_HSTS_SECONDS = 31536000
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
 ROOT_URLCONF = "shelter_project.urls"
 
