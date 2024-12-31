@@ -50,6 +50,7 @@ python -c "from django.core.management.utils import get_random_secret_key; print
 ```env
 CWB_API_KEY=您的中央氣象署金鑰
 ORS_API_KEY=您的OpenRouteService金鑰
+SECRET_KEY = 您的django金鑰
 ```
 
 ### 3. 安裝依賴
